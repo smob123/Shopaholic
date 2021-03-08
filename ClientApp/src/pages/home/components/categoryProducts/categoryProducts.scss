@@ -1,0 +1,37 @@
+.category-products-container {
+    .category-nav-container {
+        max-width: max-content;
+        margin: auto;
+
+        div {
+            &+div {
+                margin-left: 10px;
+            }
+
+            input {
+                opacity: 0;
+                width: 0;
+                height: 0;
+
+                &:checked {
+                    &+label {
+                        background-color: $red;
+                        color: #efefef;
+                    }
+                }
+            }
+
+            label {
+                background-color: #ebe6e6;
+                width: 100px;
+                height: 30px;
+                padding-top: 3px;
+                text-align: center;
+                border-radius: 100px;
+                font-family: 'open-sans-bold';
+                text-transform: uppercase;
+                cursor: pointer;
+            }
+        }
+    }
+}

@@ -1,0 +1,15 @@
+﻿.home-offer {
+    .image-container {
+        max-width: 450px;
+        overflow: hidden;
+
+        img {
+            transition-duration: .3s;
+            transition-property: transform;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+}

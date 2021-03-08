@@ -1,0 +1,51 @@
+.product-card {
+    position: relative;
+
+    .image-container {
+        position: relative;
+
+        .discount-value {
+            position: absolute;
+            top: 15px;
+            right: 10px;
+            background-color: $red;
+            padding: 5px 20px;
+            color: #efefef;
+        }
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    .info-container {
+        width: 100%;
+        margin-top: 20px;
+
+        p {
+            margin: 0;
+            font-size: 1.2rem;
+
+            &.product-title {
+                font-family: 'poppins-semi-bold', sans-serif;
+
+                a {
+                    text-decoration: none;
+                    color: #333;
+                    @include red-on-hover;
+                }
+            }
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            font-size: 1.1rem;
+            color: #696969;
+        }
+
+        .price {
+            font-size: 1.1rem;
+            color: #696969;
+        }
+    }
+}

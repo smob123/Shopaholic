@@ -1,0 +1,14 @@
+.orders {
+    .collapse {
+        width: 100%;
+        overflow: auto;
+
+        .card-body {
+            min-width: 840px;
+        }
+    }
+
+    .total-price {
+        font-size: 1.2rem;
+    }
+}

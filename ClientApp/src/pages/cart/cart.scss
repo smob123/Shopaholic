@@ -1,0 +1,33 @@
+.cart {
+
+    .cart-table-container {
+        width: 100%;
+        overflow: auto;
+
+        table {
+            min-width: 971px;
+
+            .fa-trash-alt {
+                path {
+                    color: #585858;
+                }
+            }
+
+            a {
+                color: #585858;
+                text-decoration: none;
+                @include red-on-hover;
+            }
+
+            input {
+                width: 50px;
+            }
+        }
+    }
+
+    .card-header {
+        p {
+            font-size: 1.1rem;
+        }
+    }
+}

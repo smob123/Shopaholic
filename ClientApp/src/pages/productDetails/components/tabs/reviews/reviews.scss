@@ -1,0 +1,58 @@
+.reviews-container {
+    .fa-star {
+        &+.fa-star {
+            margin-left: 5px;
+        }
+
+        &.active {
+            path {
+                color: $red;
+            }
+        }
+    }
+
+    a {
+        @include red-on-hover;
+    }
+
+    .review-submission-form {
+        label {
+            h6 {
+                font-size: 1.1rem;
+            }
+        }
+
+        .fa-star {
+            cursor: pointer;
+        }
+
+        textarea {
+            width: 100%;
+            max-width: 500px;
+            height: 100px;
+            resize: none;
+        }
+    }
+
+    .review-comment {
+        max-width: 500px;
+    }
+
+    .assessment-reviews {
+        div {
+            * {
+                color: #787878;
+            }
+        }
+    }
+}
+
+@media(min-width: 48em) {
+    .reviews-container {
+        .assessment-reviews {
+            div {
+                width: 95%;
+            }
+        }
+    }
+}

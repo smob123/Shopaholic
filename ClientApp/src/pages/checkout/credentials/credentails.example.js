@@ -1,0 +1,1 @@
+export const stripeKey = 'ADD_YOUR_OWN_STRIPE_PUBLISH_KEY';

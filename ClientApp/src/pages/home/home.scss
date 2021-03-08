@@ -1,0 +1,13 @@
+.home {
+    section {
+        margin: 95px auto;
+        max-width: 1500px;
+    }
+}
+
+@import './components/header/header.scss';
+@import './components/categories/categories.scss';
+@import './components/offers/offers.scss';
+@import './components/featuredProducts/featuredProducts.scss';
+@import './components/categoryProducts/categoryProducts.scss';
+@import './components/banner/banner.scss';
