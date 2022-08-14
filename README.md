@@ -33,4 +33,4 @@ The website allows users to create accounts, browse products, add items to their
 
 # Live Preview
 The live website can be accessed from this link:
-http://shopaholic.azurewebsites.net/
+https://shopaholic.azurewebsites.net/

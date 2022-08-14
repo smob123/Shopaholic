@@ -90,18 +90,18 @@ export default function Auth({ history }) {
                                 <Card.Title className='text-center mt-5'>
                                     <strong>
                                         Login to your account
-                                </strong>
+                                    </strong>
                                 </Card.Title>
 
                                 <Form className='mt-4' onSubmit={(e) => e.preventDefault()}>
-                                    <Form.Group controlId="formLoginEmail">
+                                    <Form.Group className='mb-4' controlId="formLoginEmail">
                                         <Form.Label>Email address</Form.Label>
-                                        <Form.Control required className='py-4' type="email" placeholder="Enter email" onChange={e => setLoginEmail(e.target.value)} />
+                                        <Form.Control required className='py-2' type="email" placeholder="Enter email" onChange={e => setLoginEmail(e.target.value)} />
                                     </Form.Group>
 
                                     <Form.Group controlId="formLoginPassword">
                                         <Form.Label>Password</Form.Label>
-                                        <Form.Control required className='py-4' type="password" placeholder="Enter password" onChange={e => setLoginPassword(e.target.value)} />
+                                        <Form.Control required className='py-2' type="password" placeholder="Enter password" onChange={e => setLoginPassword(e.target.value)} />
                                     </Form.Group>
 
                                     {/* error messages */}
@@ -128,24 +128,24 @@ export default function Auth({ history }) {
                                 </Card.Title>
 
                                 <Form className='mt-4' onSubmit={(e) => e.preventDefault()}>
-                                    <Form.Group controlId="formFirstName">
+                                    <Form.Group className='mb-4' controlId="formFirstName">
                                         <Form.Label>First Name</Form.Label>
-                                        <Form.Control required className='py-4' placeholder="Enter your first name" onChange={e => setSignupFirstName(e.target.value)} />
+                                        <Form.Control required className='py-2' placeholder="Enter your first name" onChange={e => setSignupFirstName(e.target.value)} />
                                     </Form.Group>
 
-                                    <Form.Group controlId="formLastName">
+                                    <Form.Group className='mb-4' controlId="formLastName">
                                         <Form.Label>Last Name</Form.Label>
-                                        <Form.Control required className='py-4' placeholder="Enter your last name" onChange={e => setSignupLastName(e.target.value)} />
+                                        <Form.Control required className='py-2' placeholder="Enter your last name" onChange={e => setSignupLastName(e.target.value)} />
                                     </Form.Group>
 
-                                    <Form.Group controlId="formSignupEmail">
+                                    <Form.Group className='mb-4' controlId="formSignupEmail">
                                         <Form.Label>Email address</Form.Label>
-                                        <Form.Control required className='py-4' type="email" placeholder="Enter email" onChange={e => setSignupEmail(e.target.value)} />
+                                        <Form.Control required className='py-2' type="email" placeholder="Enter email" onChange={e => setSignupEmail(e.target.value)} />
                                     </Form.Group>
 
-                                    <Form.Group controlId="formSignupPassword">
+                                    <Form.Group className='mb-4' controlId="formSignupPassword">
                                         <Form.Label>Password</Form.Label>
-                                        <Form.Control required className='py-4' type="password" placeholder="Enter password" onChange={e => setSignupPassword(e.target.value)} />
+                                        <Form.Control required className='py-2' type="password" placeholder="Enter password" onChange={e => setSignupPassword(e.target.value)} />
                                     </Form.Group>
 
                                     {/* error messages */}

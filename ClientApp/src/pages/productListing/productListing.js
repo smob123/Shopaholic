@@ -1,5 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 
+import { useLocation } from 'react-router-dom';
+
 import { Container, Row, Col, Form } from 'react-bootstrap';
 
 import queryString from 'query-string';
@@ -12,6 +14,10 @@ import ProductCard from '../../components/productCard/productCard';
 import Loading from '../../components/loading/loading';
 
 export default function ProductListing(props) {
+
+    const location = useLocation();
+    const { search } = location;
+
     // list of products
     const [products, setProducts] = useState([]);
     // applied brand filter
@@ -29,10 +35,10 @@ export default function ProductListing(props) {
 
     useEffect(() => {
         // set the brand and category filters evry time the search params change
-        const params = queryString.parse(props.location.search);
+        const params = queryString.parse(search);
         setBrandFilter(params.brand);
         setCategoryFilter(params.category);
-    }, [props.location.search]);
+    }, [search]);
 
     /**
      * returns the list filters as dropdown options
@@ -71,7 +77,7 @@ export default function ProductListing(props) {
      * applies filters to the products and returns the end result
      */
     const getFilteredProducts = () => {
-        const params = queryString.parse(props.location.search);
+        const params = queryString.parse(search);
         let res = [...products];
 
         if (params.category) {
@@ -157,8 +163,8 @@ export default function ProductListing(props) {
         }
 
         // get the current path and query params
-        const path = props.location.pathname;
-        const params = queryString.parse(props.location.search);
+        const path = location.pathname;
+        const params = queryString.parse(search);
 
         // params without the new filter
         const paramsWithoutFilter = { ...params };

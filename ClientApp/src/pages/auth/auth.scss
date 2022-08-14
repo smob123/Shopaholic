@@ -11,17 +11,18 @@
         .nav-tabs {
             justify-content: center;
 
-            .nav-item {
-                padding-left: 50px;
-                padding-right: 50px;
-                border: 1px solid rgba(0, 0, 0, .1);
-                color: #333;
+                .nav-link {
+                    border: 1px solid rgba(0, 0, 0, .1);
+                    color: #333;
+                    padding-left: 50px;
+                    padding-right: 50px;
+                    border-bottom: none;
 
-                &.nav-link.active {
-                    border: none;
-                    background-color: $red;
-                    color: #efefef;
-                }
+                    &.nav-link.active {
+                        border: none;
+                        background-color: $red;
+                        color: #efefef;
+                    }
             }
         }
     }

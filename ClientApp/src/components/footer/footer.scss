@@ -60,8 +60,8 @@ footer {
             border-bottom: 1px solid #3a3a3a;
 
             svg {
-                width: 40px;
-                height: 40px;
+                width: 25px;
+                height: 25px;
                 padding: 10px;
                 border: 1px solid #545454;
                 border-radius: 50%;
@@ -90,36 +90,9 @@ footer {
         }
 
         .logo-container {
-            margin: 20px 0;
-
             img {
                 width: 200px;
                 max-width: 100%;
-            }
-
-            p {
-                align-self: flex-end;
-            }
-        }
-
-        .payments-container {
-            margin: 0 auto;
-        }
-    }
-}
-
-@media(min-width: 35.5em) {
-    footer {
-        .content {
-            .logo-container {
-                margin: 20px auto;
-
-                p {
-                    position: relative;
-                    top: 100%;
-                    transform: translateY(-170%);
-                    margin-left: 10px;
-                }
             }
         }
     }
@@ -137,20 +110,6 @@ footer {
                 button {
                     margin-left: 20px;
                 }
-            }
-        }
-    }
-}
-
-@media(min-width: 52em) {
-    footer {
-        .content {
-            .logo-container {
-                margin: 0;
-            }
-
-            .payments-container {
-                margin: 0;
             }
         }
     }

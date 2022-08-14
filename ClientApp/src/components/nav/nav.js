@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { withRouter } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import withRouter from '../withRouter/withRouter';
 
 import { Navbar, Nav, NavDropdown, Button } from 'react-bootstrap';
 
@@ -14,7 +14,10 @@ import ShoppingCartDark from './images/shopping-cart-dark.png';
 import ProfileLight from './images/profile-light.png';
 import ProfileDark from './images/profile-dark.png';
 
-function Home({ history }) {
+function Navigation() {
+
+    const location = useLocation();
+    const { pathname, search } = location;
 
     // the user's auth state
     const userAuthState = useSelector(store => store.auth);
@@ -39,7 +42,7 @@ function Home({ history }) {
             window.removeEventListener('scroll', scrollListener);
             window.removeEventListener('resize', sizeListener);
         }
-    }, [history.location.pathname]);
+    }, [pathname]);
 
     /**
      * changes the navbar based on the screen size
@@ -51,7 +54,7 @@ function Home({ history }) {
             window.addEventListener('scroll', scrollListener);
 
             // check if the user is currently on the homepage
-            if (history.location.pathname === '/') {
+            if (pathname === '/') {
                 // remove the nav element's white background, and make its position absolute
                 setNavbarLight(false);
                 navbar.classList.add('absolute');
@@ -86,7 +89,7 @@ function Home({ history }) {
                 }
             } else {
                 // otherwise remove the white background if the user is on the homepage 
-                if (history.location.pathname === '/') {
+                if (pathname === '/') {
                     setNavbarLight(false);
                 }
 
@@ -111,7 +114,7 @@ function Home({ history }) {
         const linksList = [];
 
         // get the current url
-        const urlPath = `${history.location.pathname}${history.location.search}`;
+        const urlPath = `${pathname}${search}`;
 
         for (const link of links) {
             linksList.push(
@@ -134,6 +137,7 @@ function Home({ history }) {
     return (
         <div className='nav-container w-100'>
             <Navbar
+                className='px-2'
                 collapseOnSelect
                 onToggle={() => setNavExpanded(!navExpanded)}
                 expand="sm"
@@ -224,4 +228,4 @@ function Home({ history }) {
     );
 }
 
-export default withRouter(Home);
+export default withRouter(Navigation);

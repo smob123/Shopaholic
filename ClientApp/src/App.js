@@ -1,5 +1,5 @@
 import { useEffect, Fragment } from 'react';
-import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Navigate, Route, Routes } from 'react-router-dom';
 import ProtectedRoute from './components/protectedRoute/protectedRoute';
 
 import ScrollToTop from './components/scrollToTop/scrollToTop';
@@ -66,17 +66,16 @@ function App() {
                 <ScrollToTop>
                     <Nav />
 
-                    <Switch>
-                        <Route exact path='/' component={Home} />
-                        <Route exact path='/product/:id' component={ProductDetails} />
-                        <Route path='/products' component={ProductListing} />
-                        <Route exact path='/auth' component={Auth} />
-                        <Route exact path='/404' component={NotFound} />
-                        <ProtectedRoute exact path='/cart' component={Cart} />
-                        <ProtectedRoute exact path='/checkout' component={Checkout} />
-                        <ProtectedRoute exact path='/orders' component={Orders} />
-                        <Redirect to='/404' />
-                    </Switch>
+                    <Routes>
+                        <Route exact path='*' element={<NotFound />} />
+                        <Route exact path='/' element={<Home />} />
+                        <Route exact path='/product/:id' element={<ProductDetails />} />
+                        <Route path='/products' element={<ProductListing />} />
+                        <Route exact path='/auth' element={<Auth />} />
+                        <Route path='/cart' element={<ProtectedRoute element={<Cart />} />} />
+                        <Route path='/checkout' element={<ProtectedRoute element={<Checkout />} />} />
+                        <Route path='/orders' element={<ProtectedRoute element={<Orders />} />} />
+                    </Routes>
 
                     <Footer />
                 </ScrollToTop>
